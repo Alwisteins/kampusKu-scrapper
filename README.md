@@ -1,5 +1,5 @@
 # kampusKu-scrapper
-this repo contain scrapper to scrapping list kampus by https://pddikti.kemdikbud.go.id/
+this repo contain scrapper to scrapping list kampus by 'https://id.wikipedia.org/wiki/Daftar_perguruan_tinggi_negeri_di_Indonesia'
 
 ### feature ###
 - get list provinsi
