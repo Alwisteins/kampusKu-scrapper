@@ -2,6 +2,8 @@ import puppeteer from "puppeteer-core";
 
 //URL PAGE
 const institut_URL = "https://pddikti.kemdikbud.go.id/search/institut";
+const universitas_URL = "https://pddikti.kemdikbud.go.id/search/universitas";
+const politeknik_URL = "https://pddikti.kemdikbud.go.id/search/politeknik";
 
 (async () => {
   const browser = await puppeteer.launch({
