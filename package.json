@@ -1,0 +1,17 @@
+{
+  "name": "kampusku-scrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^20.7.2",
+    "puppeteer-core": "^20.7.2"
+  }
+}
