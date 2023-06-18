@@ -3,13 +3,13 @@ this repo contain scrapper to scrapping list kampus by 'https://id.wikipedia.org
 
 ### feature ###
 - get list provinsi
-- get list universitas
-- get list institut
-- get list politeknik
-- get list akademi
+- get list universitas with kota
+- get list institut with kota
+- get list politeknik with kota
+- get list akademi with kota
 
 ### feature on process ###
-- get city?(should i add it?)
+- 
 
 ## TO DO ##
 1) masalah:
@@ -24,3 +24,5 @@ harus mereturn list kampus dengan kota dan provinsi?
 
 2) masalah:
 scrapper harus mengambil data akreditasi, foto, deskripsi, link kampus, rank nasional dan fakultas
+
+3) masalah: ada bug pada beberapa items, dimana beberapa items berisi 2 value kampus berbeda pada satu item
