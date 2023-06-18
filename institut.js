@@ -44,6 +44,7 @@ const URL =
     return detail;
   });
 
+  fs.writeFileSync("./data-output/data-institut.json", JSON.stringify(data));
   console.log(data);
 
   // Tutup browser Puppeteer

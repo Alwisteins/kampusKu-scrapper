@@ -44,6 +44,7 @@ const URL =
     return detail;
   });
 
+  fs.writeFileSync("./data-output/data-politeknik.json", JSON.stringify(data));
   console.log(data);
 
   // Tutup browser Puppeteer

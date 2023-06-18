@@ -1,4 +1,5 @@
 import puppeteer from "puppeteer-core";
+import fs from "fs";
 
 //URL PAGE
 const URL =
@@ -46,6 +47,7 @@ const URL =
     return detail;
   });
 
+  fs.writeFileSync("./data-output/data-universitas.json", JSON.stringify(data));
   console.log(data);
 
   // Tutup browser Puppeteer
