@@ -1,16 +1,19 @@
 # kampusKu-scrapper
-this repo contain scrapper to scrapping list kampus by https://pddikti.kemdikbud.go.id/
+this repo contain scrapper to scrapping list kampus by 'https://id.wikipedia.org/wiki/Daftar_perguruan_tinggi_negeri_di_Indonesia'
 
 ### feature ###
+- get list provinsi
+- get list universitas
 - get list institut
+- get list politeknik
+- get list akademi
 
 ### feature on process ###
-- get list politeknik
-- get list universitas
+- get city?(should i add it?)
 
 ## TO DO ##
 1) masalah:
-index.js harus mengambil data berdasarkan url yang dipilih client(universitas, politeknik, institut)
+harus mereturn list kampus dengan kota dan provinsi?
 
 1) pilihan solusi:
 - membuat pengkondisian
