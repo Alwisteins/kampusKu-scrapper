@@ -1,9 +1,8 @@
 import puppeteer from "puppeteer-core";
 
 //URL PAGE
-const URL = 'https://id.wikipedia.org/wiki/Daftar_perguruan_tinggi_negeri_di_Indonesia';
-
-
+const URL =
+  "https://id.wikipedia.org/wiki/Daftar_perguruan_tinggi_negeri_di_Indonesia";
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -15,23 +14,34 @@ const URL = 'https://id.wikipedia.org/wiki/Daftar_perguruan_tinggi_negeri_di_Ind
 
   const data = await page.evaluate(() => {
     //selector
-    const perguruanTinggi = document.querySelectorAll(
-      "div.mw-parser-output > ul > li > a:nth-child(1)"
+    const selector = document.querySelectorAll(
+      "div.mw-parser-output > ul > li > a"
     );
 
     let listPerguruanTinggi = [];
-    
+
     //take value from selector and push into listPerguruanTinggi
-    perguruanTinggi.forEach((element) => {
-      listPerguruanTinggi.push(element.textContent.trim());
+    selector.forEach((element) => {
+      const perguruanTinggi = element.textContent;
+      listPerguruanTinggi.push(perguruanTinggi);
     });
 
-    //filter listPerguruanTinggi with value "Akademi"
-    const listAkademi = listPerguruanTinggi.filter((perguruanTinggi) => {
-      return perguruanTinggi.startsWith("Akademi")
-    })
+    //filter to get list akademi
+    const akademi = listPerguruanTinggi.filter((item) => {
+      return item.startsWith("Akademi");
+    });
 
-    return listAkademi
+    //filter to get list kota akademi
+    const kota = listPerguruanTinggi.filter((item, index) => {
+      return index > 0 && listPerguruanTinggi[index - 1].startsWith("Akademi");
+    });
+
+    //combining akademi and kota into one array & one item each index
+    const detail = akademi.map((item, index) => {
+      return item + ", " + kota[index];
+    });
+
+    return detail;
   });
 
   console.log(data);

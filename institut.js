@@ -14,23 +14,34 @@ const URL =
 
   const data = await page.evaluate(() => {
     //selector
-    const institut = document.querySelectorAll(
-      "div.mw-parser-output > ul > li > a:nth-child(1)"
+    const selector = document.querySelectorAll(
+      "div.mw-parser-output > ul > li > a"
     );
 
     let listPerguruanTinggi = [];
 
     //take value from selector and push into listPerguruanTinggi
-    institut.forEach((element) => {
-      listPerguruanTinggi.push(element.textContent.trim());
+    selector.forEach((element) => {
+      const perguruanTinggi = element.textContent;
+      listPerguruanTinggi.push(perguruanTinggi);
     });
 
-    //filter listPerguruanTinggi with value "Institut"
-    const listInstitut = listPerguruanTinggi.filter((perguruanTinggi) => {
-      return perguruanTinggi.startsWith("Institut");
+    //filter to get list Institut
+    const Institut = listPerguruanTinggi.filter((item) => {
+      return item.startsWith("Institut");
     });
 
-    return listInstitut;
+    //filter to get list kota Institut
+    const kota = listPerguruanTinggi.filter((item, index) => {
+      return index > 0 && listPerguruanTinggi[index - 1].startsWith("Institut");
+    });
+
+    //combining Institut and kota into one array & one item each index
+    const detail = Institut.map((item, index) => {
+      return item + ", " + kota[index];
+    });
+
+    return detail;
   });
 
   console.log(data);
