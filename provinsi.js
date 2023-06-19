@@ -27,7 +27,7 @@ const URL =
     return listProvinsi;
   });
 
-  fs.writeFileSync("./data-output/data-universitas.json", JSON.stringify(data));
+  fs.writeFileSync("./data-output/data-provinsi.json", JSON.stringify(data));
   console.log(data);
 
   // Tutup browser Puppeteer
