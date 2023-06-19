@@ -1,4 +1,5 @@
 import puppeteer from "puppeteer-core";
+import fs from "fs";
 
 //URL PAGE
 const URL =

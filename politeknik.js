@@ -1,4 +1,5 @@
 import puppeteer from "puppeteer-core";
+import fs from "fs";
 
 //URL PAGE
 const URL =
@@ -33,7 +34,9 @@ const URL =
 
     //filter to get list kota Politeknik
     const kota = listPerguruanTinggi.filter((item, index) => {
-      return index > 0 && listPerguruanTinggi[index - 1].startsWith("Politeknik");
+      return (
+        index > 0 && listPerguruanTinggi[index - 1].startsWith("Politeknik")
+      );
     });
 
     //combining Politeknik and kota into one array & one item each index
